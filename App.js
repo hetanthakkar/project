@@ -8,7 +8,7 @@ import Settings from "./accountSettings";
 import Category from "./cat";
 import Linear1 from "./linear1";
 import Linear3 from "./linear3Container";
-import Map from "./map";
+// import Map from "./map";
 import Chat from "./chat";
 import Transaction from "./transaction";
 export default createBrowserApp(
@@ -18,7 +18,7 @@ export default createBrowserApp(
       Register,
       Home,
       Settings,
-      Map,
+      // Map,
       Linear1,
       Linear3,
       Category,

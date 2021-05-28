@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
-import StarRating from "react-native-star-rating";
+// import StarRating from "react-native-star-rating";
 class Home extends Component {
   render() {
     return (

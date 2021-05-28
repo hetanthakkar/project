@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { AirbnbRating } from "react-native-ratings"; //5.3.0
+// import { AirbnbRating } from "react-native-ratings"; //5.3.0
 import { Icon } from "react-native-elements";
 
 import {
@@ -182,7 +182,7 @@ export default class HomePage extends Component {
 
           <View style={{ flexDirection: "row", marginLeft: "1%" }}>
             <SemiBoldText style={styles.sectionHeader1}>Ratings:</SemiBoldText>
-            <AirbnbRating
+            {/* <AirbnbRating
               count={5}
               selectedColor={Colors.blue}
               reviewColor={Colors.blue}
@@ -192,7 +192,7 @@ export default class HomePage extends Component {
               onFinishRating={this.ratingCompleted}
               size={20}
               isDisabled={true}
-            />
+            /> */}
           </View>
         </AnimatableView>
         <ClipBorderRadius>
