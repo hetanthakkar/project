@@ -37,34 +37,34 @@ if (!firebase.apps.length) {
 export default class Signup extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = { theme: "dark" };
   }
   componentDidMount() {
-    if (!Constants.platform.web.ua.includes("Windows")) {
+    if (!Constants?.platform?.web?.ua?.includes("Windows")) {
       this.setState({ multiply: 2 });
       this.setState({ orientation: "column" });
     }
-    if (Constants.platform.web.ua.includes("Windows")) {
+    if (Constants?.platform?.web?.ua?.includes("Windows")) {
       this.setState({ width: screenWidth * 45 });
     } else {
       this.setState({ width: screenWidth * 90 });
     }
-    if (Constants.platform.web.ua.includes("Windows")) {
+    if (Constants?.platform?.web?.ua?.includes("Windows")) {
       this.setState({ width1: screenWidth * 27 });
     } else {
       this.setState({ width1: screenWidth * 5 });
     }
-    if (Constants.platform.web.ua.includes("Windows")) {
+    if (Constants?.platform?.web?.ua?.includes("Windows")) {
       this.setState({ width2: screenWidth * 13 });
     } else {
       this.setState({ width2: screenWidth * 45 });
     }
-    if (Constants.platform.web.ua.includes("Windows")) {
+    if (Constants?.platform?.web?.ua?.includes("Windows")) {
       this.setState({ width3: screenWidth * -0.5 });
     } else {
       this.setState({ width3: screenWidth * -50 });
     }
-    if (Constants.platform.web.ua.includes("Windows")) {
+    if (Constants?.platform?.web?.ua?.includes("Windows")) {
       this.setState({ width4: screenWidth * 15 });
     } else {
       this.setState({ width4: screenWidth * 50 });
@@ -99,11 +99,11 @@ export default class Signup extends Component {
   render() {
     if (true) {
       return (
-        <LinearGradient
-          colors={["#F1EEFc", "#F1EEFc"]}
-          start={{ x: 1, y: 0 }}
-          end={{ x: 0, y: 1 }}
-          style={{ height: screenHeight * 100 }}
+        <View
+          style={{
+            backgroundColor: this.state.theme == "dark" ? "#141519" : "white",
+            flex: 1,
+          }}
         >
           <ScrollView
             showsVerticalScrollIndicator={false}
@@ -115,24 +115,99 @@ export default class Signup extends Component {
               height: screenHeight,
             }}
           >
-            <Text style={styles.bookingDetails}>Booking Details</Text>
+            <Text
+              style={
+                this.state.theme == "dark"
+                  ? {
+                      textAlign: "center",
+                      fontWeight: "bold",
+                      color: "white",
+                      fontSize: 33,
+                      marginTop: screenHeight * 6,
+                    }
+                  : styles.bookingDetails
+              }
+            >
+              Booking Details
+            </Text>
           </ScrollView>
           <ScrollView
             showsVerticalScrollIndicator={false}
-            style={styles.modalView}
+            style={
+              this.state.theme == "dark"
+                ? { ...styles.modalView, backgroundColor: "#141519" }
+                : styles.modalView
+            }
           >
-            <Text style={styles.lessonSummary}>Lesson Summary</Text>
+            <Text
+              style={
+                this.state.theme == "dark"
+                  ? { ...styles.lessonSummary, color: "#DFE5EF" }
+                  : styles.lessonSummary
+              }
+            >
+              Lesson Summary
+            </Text>
             <View style={{ flexDirection: "row" }}>
-              <Text style={styles.modalText}> Tutor Name: </Text>
-              <Text style={styles.right}> Hetan Thakkar </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.modalText, color: "#DFE5EF" }
+                    : styles.modalText
+                }
+              >
+                Tutor Name:
+              </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.right, color: "#DFE5EF" }
+                    : styles.right
+                }
+              >
+                Hetan Thakkar
+              </Text>
             </View>
             <View style={{ flexDirection: "row" }}>
-              <Text style={styles.modalText}>Lesson Length:</Text>
-              <Text style={styles.right}>45 minutes </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.modalText, color: "#DFE5EF" }
+                    : styles.modalText
+                }
+              >
+                Lesson Length:
+              </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.right, color: "#DFE5EF" }
+                    : styles.right
+                }
+              >
+                45 minutes{" "}
+              </Text>
             </View>
             <View style={{ flexDirection: "row" }}>
-              <Text style={styles.modalText}>Lesson Name: </Text>
-              <Text style={styles.right}> React Native </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.modalText, color: "#DFE5EF" }
+                    : styles.modalText
+                }
+              >
+                Lesson Name:{" "}
+              </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.right, color: "#DFE5EF" }
+                    : styles.right
+                }
+              >
+                {" "}
+                React Native{" "}
+              </Text>
             </View>
             <View
               style={{
@@ -141,25 +216,64 @@ export default class Signup extends Component {
                 marginTop: screenHeight * 3,
               }}
             />
-            <Text style={styles.price}>Price Summary </Text>
+            <Text
+              style={
+                this.state.theme == "dark"
+                  ? { ...styles.price, color: "#DFE5EF" }
+                  : styles.price
+              }
+            >
+              Price Summary{" "}
+            </Text>
             <View style={{ flexDirection: "row" }}>
-              <Text style={styles.modalText}>Lesson Price:</Text>
-              <Text style={styles.lessonPrice1}>$300 </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.modalText, color: "#DFE5EF" }
+                    : styles.modalText
+                }
+              >
+                Lesson Price:
+              </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.lessonPrice1, color: "#DFE5EF" }
+                    : styles.lessonPrice1
+                }
+              >
+                $300{" "}
+              </Text>
             </View>
-            <Text style={styles.price}>Apply Coupon Code </Text>
-            <TextInput style={styles.textInput}></TextInput>
+            <Text
+              style={
+                this.state.theme == "dark"
+                  ? { ...styles.price, color: "#DFE5EF" }
+                  : styles.price
+              }
+            >
+              Apply Coupon Code{" "}
+            </Text>
+            <TextInput
+              style={
+                this.state.theme == "dark"
+                  ? { ...styles.textInput, backgroundColor: "#DFE5EF" }
+                  : styles.textInput
+              }
+            ></TextInput>
             <View style={{ flexDirection: "row" }}>
               <TouchableOpacity
                 style={{
                   backgroundColor: "#F194FF",
                   borderRadius: 5,
-                  width: screenWidth * 9,
-                  height: screenHeight * 4,
+                  padding: 6,
+                  // width: screenWidth * 9,
+                  // height: screenHeight * 4,
                   marginTop: screenHeight * 2,
                   backgroundColor: "#2196F3",
                 }}
                 onPress={() => {
-                  console.log(modalVisible);
+                  console.log("modalVisible");
                 }}
               >
                 <Text style={styles.textCoupon}>Apply Coupon</Text>
@@ -168,8 +282,24 @@ export default class Signup extends Component {
             </View>
 
             <View style={{ flexDirection: "row" }}>
-              <Text style={styles.modalText}>Deducted Price: </Text>
-              <Text style={styles.right}>- $100 </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.modalText, color: "#DFE5EF" }
+                    : styles.modalText
+                }
+              >
+                Deducted Price:{" "}
+              </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.right, color: "#DFE5EF" }
+                    : styles.right
+                }
+              >
+                - $100{" "}
+              </Text>
             </View>
             <View
               style={{
@@ -180,20 +310,40 @@ export default class Signup extends Component {
             />
 
             <View style={{ flexDirection: "row" }}>
-              <Text style={styles.totalText}>Total : </Text>
-              <Text style={styles.total}>$ 200 </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.totalText, color: "#DFE5EF" }
+                    : styles.totalText
+                }
+              >
+                Total :{" "}
+              </Text>
+              <Text
+                style={
+                  this.state.theme == "dark"
+                    ? { ...styles.total, color: "#DFE5EF" }
+                    : styles.total
+                }
+              >
+                $ 200{" "}
+              </Text>
             </View>
 
             <TouchableHighlight
-              style={styles.pay}
+              style={
+                this.state.theme == "dark"
+                  ? { ...styles.pay, color: "#DFE5EF" }
+                  : styles.pay
+              }
               onPress={() => {
-                setModalVisible(true);
+                console.log("sd");
               }}
             >
               <Text style={styles.textStyle}>Proceed to Pay</Text>
             </TouchableHighlight>
           </ScrollView>
-        </LinearGradient>
+        </View>
       );
     } else {
       return <View />;
@@ -214,7 +364,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     borderWidth: 0.9,
     padding: screenHeight * 4,
-    shadowColor: "#000",
+    shadowColor: "white",
     shadowOffset: {
       width: 0,
       height: 2,
@@ -224,19 +374,21 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.95,
     shadowRadius: 10,
     elevation: 8,
+    borderColor: "white",
   },
   pay: {
     backgroundColor: "#fc0f84",
-    borderRadius: 20,
+    borderRadius: 12,
     padding: 10,
-    width: screenWidth * 20,
-    height: screenHeight * 7,
+    // width: screenWidth * 20,
+    // height: screenHeight * 7,
     alignSelf: "center",
-    marginTop: screenHeight * 2,
+    marginTop: screenHeight * 5,
   },
   applied: {
-    marginTop: screenHeight * 2,
-    fontSize: 16,
+    marginTop: screenHeight * 2.5,
+    marginLeft: screenWidth * 2,
+    fontSize: 18,
     color: "green",
   },
   textStyle: {
@@ -251,6 +403,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "black",
     fontSize: 33,
+    marginTop: screenHeight * 6,
   },
   textCoupon: {
     color: "white",
@@ -270,6 +423,7 @@ const styles = StyleSheet.create({
     marginTop: screenHeight * 2,
     textAlignVertical: "center",
     fontSize: 18,
+    fontWeight: "bold",
   },
 
   totalText: {

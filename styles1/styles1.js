@@ -1,91 +1,84 @@
-import { StyleSheet, Dimensions } from "react-native";
-var screenWidth = Math.round(Dimensions.get("window").width) / 100;
-var screenHeight = Math.round(Dimensions.get("window").height) / 100;
+import { StyleSheet } from "react-native";
+import { screenHeight, screenWidth } from "../helper";
 
-const styles1 = StyleSheet.create({
-  pickerText: {
-    marginLeft: 400,
-  },
-  sign: {
-    marginTop: screenHeight * 15,
-  },
-  signup: {
-    color: "#0984e3",
-    fontSize: 32,
+const styles = StyleSheet.create({
+  title: {
+    fontSize: 22,
     fontWeight: "bold",
-    marginTop: 40,
-    marginBottom: 8,
     textAlign: "center",
+    marginBottom: screenHeight * 3,
+    marginTop: screenHeight * 4,
+    color: "black",
   },
-  mar: {
-    marginTop: screenHeight * 20,
+  logo: {
+    width: 66,
+    height: 58,
   },
-  errorText: {
-    color: "yellow",
-    textAlign: "center",
-    paddingTop: screenHeight,
+  mainView: {
+    height: screenHeight * 100,
+    flex: 1,
+  },
+  logoView: {
+    alignSelf: "center",
+    marginTop: screenHeight * 8,
+    flexDirection: "row",
   },
   customButton: {
     alignSelf: "center",
-    backgroundColor: "white",
-    borderRadius: 20,
-    width: screenWidth * 35,
-    marginVertical: 30,
-    height: screenHeight * 8,
-  },
-  textStyle: {
-    color: "#020cab",
-    textAlign: "center",
-    fontWeight: "bold",
-    fontSize: 32,
-    textAlignVertical: "center",
+    backgroundColor: "#3d5af1",
+    borderRadius: 10,
+    width: screenWidth * 85,
+    marginBottom: screenHeight * 2,
+    padding: 3,
   },
 
+  textStyle: {
+    color: "white",
+    textAlign: "center",
+    fontWeight: "bold",
+    fontSize: 14,
+    textAlignVertical: "center",
+    letterSpacing: 2,
+  },
+
+  errorLabel: {
+    fontWeight: "bold",
+    marginStart: screenWidth * 10,
+    fontSize: 15,
+    color: "black",
+  },
   errorText: {
-    color: "yellow",
-    fontFamily: "bold",
+    color: "#FF6666",
+    fontWeight: "bold",
     textAlign: "center",
   },
-  field: {
-    width: 425,
-    margin: 10,
-    padding: 15,
-    fontSize: 18,
+  already: {
+    fontSize: 15,
+    color: "grey",
+  },
+  signinText: {
+    fontSize: 15,
+    color: "#006BB4",
+    fontWeight: "bold",
+  },
+
+  signinView: {
     alignSelf: "center",
-    borderColor: "white",
-    borderBottomWidth: 1,
-    color: "white",
-    textAlign: "center",
-    outlineWidth: 0,
-  },
-  container: {
     flexDirection: "row",
-    backgroundColor: "#bdc3c7",
-    alignItems: "center",
-    justifyContent: "center",
+    marginBottom: screenHeight * 2,
+  },
+  textInput: {
+    width: screenWidth * 85,
+    marginStart: screenWidth * 10,
+    marginTop: 5,
+    backgroundColor: "#F3F3F3",
+    borderColor: "#F3F3F3",
     borderWidth: 2,
-    borderColor: "black",
-  },
-  button: {
-    color: "white",
-    alignSelf: "center",
-    marginTop: 4,
-  },
-  container: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    borderColor: "black",
-    backgroundColor: "#D4E6F1",
-  },
-  myText: {
-    color: "white",
-    borderWidth: 2,
-    borderColor: "#d6d0cf",
-    margin: 10,
+    borderRadius: 8,
+    fontSize: 16,
+    height: screenHeight * 6,
     padding: 10,
-    width: "95%",
-    borderRadius: 12,
   },
 });
-export default styles1;
+
+export default styles;

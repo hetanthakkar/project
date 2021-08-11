@@ -6,6 +6,7 @@ var solution;
 const DEF_STATE = [];
 export const userReducer = (state = {}, action) => {
   const { type, payload } = action;
+  console.log("aya", type, payload);
   switch (type) {
     case "ADD_USER":
       var a = Object.assign({}, state, payload);

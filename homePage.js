@@ -53,8 +53,7 @@ export default class HomePage extends Component {
               <TouchableOpacity onPress={() => console.log("lsjng")}>
                 <Image
                   source={{
-                    uri:
-                      "https://static.toiimg.com/photo/msid-71935935/71935935.jpg",
+                    uri: "https://static.toiimg.com/photo/msid-71935935/71935935.jpg",
                   }}
                   style={styles.avatarMultiple}
                 />

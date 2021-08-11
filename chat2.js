@@ -217,7 +217,7 @@ const styles = StyleSheet.create({
   },
   request: {
     padding: 20,
-    width: screenWidth * 50,
+    width: screenWidth * 100,
     marginBottom: 15,
   },
   requestStatus: {

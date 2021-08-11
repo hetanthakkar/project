@@ -48,10 +48,10 @@ export default function Example() {
 
   return (
     <View style={{ flex: 1, flexDirection: "row", alignItems: "stretch" }}>
-      <View style={{ flex: 0.7 }}>
-        <Chats />
-      </View>
-      <View style={{ flex: 1, backgroundColor: "#dfe6e9" }}>
+      {/* <View style={{ flex: 0.7 }}> */}
+      <Chats />
+      {/* </View> */}
+      {/* <View style={{ flex: 1, backgroundColor: "#dfe6e9", height: "100%" }}>
         <GiftedChat
           messages={messages}
           onSend={(messages) => onSend(messages)}
@@ -59,7 +59,7 @@ export default function Example() {
             _id: 1,
           }}
         />
-      </View>
+      </View> */}
     </View>
   );
 }

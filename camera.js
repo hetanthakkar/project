@@ -12,6 +12,7 @@ import {
   View,
   TouchableOpacity,
   Text,
+  StyleSheet,
 } from "react-native";
 import firebase from "firebase";
 var firebaseConfig = {
@@ -269,10 +270,10 @@ export default class App extends React.Component {
 async function uploadImageAsync(uri) {
   const blob = await new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
-    xhr.onload = function() {
+    xhr.onload = function () {
       resolve(xhr.response);
     };
-    xhr.onerror = function(e) {
+    xhr.onerror = function (e) {
       console.log(e);
       reject(new TypeError("Network request failed"));
     };
@@ -281,10 +282,7 @@ async function uploadImageAsync(uri) {
     xhr.send(null);
   });
 
-  const ref = firebase
-    .storage()
-    .ref()
-    .child("ksjdnf");
+  const ref = firebase.storage().ref().child("ksjdnf");
   const snapshot = await ref.put(blob);
   blob.close();
   return await snapshot.ref.getDownloadURL();

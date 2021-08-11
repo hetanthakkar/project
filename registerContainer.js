@@ -4,7 +4,9 @@ import { Provider } from "react-redux";
 import store from "./index";
 import Myform from "./linear3";
 export default class Signup extends React.Component {
-  componentDidMount = () => {};
+  componentDidMount = () => {
+    console.log(store);
+  };
   render() {
     return (
       <Provider store={store}>

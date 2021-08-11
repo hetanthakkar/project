@@ -1,4 +1,5 @@
 export const addUser = (user) => {
+  console.log("hey there", user);
   return {
     payload: user,
     type: "ADD_USER",
